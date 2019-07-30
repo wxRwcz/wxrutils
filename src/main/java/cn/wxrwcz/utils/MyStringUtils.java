@@ -1,7 +1,5 @@
 package cn.wxrwcz.utils;
 
-import com.sun.istack.internal.NotNull;
-
 import java.security.MessageDigest;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -282,7 +280,7 @@ public class MyStringUtils {
         return ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS || ub == Character.UnicodeBlock.CJK_COMPATIBILITY_IDEOGRAPHS || ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A || ub == Character.UnicodeBlock.GENERAL_PUNCTUATION || ub == Character.UnicodeBlock.CJK_SYMBOLS_AND_PUNCTUATION || ub == Character.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS;
     }
 
-    public static Map<String, String> getUrlParam(@NotNull String url) {
+    public static Map<String, String> getUrlParam( String url) {
         Map<String, String> map = new HashMap();
         String[] strings = url.split("&");
         String[] var3 = strings;
