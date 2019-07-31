@@ -4,12 +4,6 @@ import java.security.MessageDigest;
 import java.util.*;
 import java.util.regex.Pattern;
 
-/**
- * @Description: java类作用描述
- * @Author: wangcz
- * @CreateDate: 2019/7/30$ 18:36$
- * @Version: 1.0
- */
 public class MyStringUtils {
     private static final String[] hexDigits = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
 

@@ -4,12 +4,6 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Properties;
 
-/**
- * @Description: java类作用描述
- * @Author: wangcz
- * @CreateDate: 2019/7/30$ 18:37$
- * @Version: 1.0
- */
 public class MyComputerInfoUtils {
     private static Properties props = System.getProperties();
     private static InetAddress addr;
