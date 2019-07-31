@@ -8,9 +8,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class MyDateUtils {
-    private MyDateUtils() {
-    }
-
     public static Date getYesterdayTime() {
         Calendar cal = Calendar.getInstance();
         cal.add(5, -1);
