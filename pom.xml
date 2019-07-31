@@ -112,7 +112,7 @@
             <distributionManagement>
                 <snapshotRepository>
                     <id>wxrutils</id>
-                    <url>https://oss.sonatype.org/content/repositories/wxrutils</url>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
                 </snapshotRepository>
                 <repository>
                     <id>wxrutils</id>
