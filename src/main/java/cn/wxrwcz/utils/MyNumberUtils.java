@@ -2,12 +2,6 @@ package cn.wxrwcz.utils;
 
 import java.math.BigDecimal;
 
-/**
- * @Description: java类作用描述
- * @Author: wangcz
- * @CreateDate: 2019/7/30$ 18:36$
- * @Version: 1.0
- */
 public class MyNumberUtils {
     public MyNumberUtils() {
     }
