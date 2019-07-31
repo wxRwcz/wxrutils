@@ -26,6 +26,8 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <developers>
         <developer>
@@ -45,7 +47,6 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <build>
-                <pluginManagement>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -87,7 +88,6 @@
                         </executions>
                     </plugin>
                 </plugins>
-                </pluginManagement>
             </build>
             <distributionManagement>
                 <snapshotRepository>
