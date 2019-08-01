@@ -52,7 +52,7 @@ public class WxrRSA {
      * </p>
      *
      * @return String 加密后的字符串
-     * @throws Exception
+     * @throws Exception 异常
      */
     public static Map<String, Object> genKeyPair() throws Exception {
         KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance(KEY_ALGORITHM);
@@ -75,7 +75,7 @@ public class WxrRSA {
      * @param privateKey 私钥(WxrBase64编码)
      *
      * @return String 加密后的字符串
-     * @throws Exception
+     * @throws Exception 异常
      */
     public static String sign(byte[] data, String privateKey) throws Exception {
         byte[] keyBytes = WxrBase64.decode(privateKey);
@@ -98,7 +98,7 @@ public class WxrRSA {
      * @param sign 数字签名
      *
      * @return String 加密后的字符串
-     * @throws Exception
+     * @throws Exception 异常
      *
      */
     public static boolean verify(byte[] data, String publicKey, String sign)
@@ -121,7 +121,7 @@ public class WxrRSA {
      * @param encryptedData 已加密数据
      * @param privateKey 私钥(WxrBase64编码)
      * @return String 加密后的字符串
-     * @throws Exception
+     * @throws Exception 异常
      */
     public static byte[] decryptByPrivateKey(byte[] encryptedData, String privateKey)
             throws Exception {
@@ -142,7 +142,7 @@ public class WxrRSA {
      * @param encryptedData 已加密数据
      * @param publicKey 公钥(WxrBase64编码)
      * @return String 加密后的字符串
-     * @throws Exception
+     * @throws Exception 异常
      */
     public static byte[] decryptByPublicKey(byte[] encryptedData, String publicKey)
             throws Exception {
@@ -163,7 +163,7 @@ public class WxrRSA {
      * @param data 源数据
      * @param publicKey 公钥(WxrBase64编码)
      * @return String 加密后的字符串
-     * @throws Exception
+     * @throws Exception 异常
      */
     public static byte[] encryptByPublicKey(byte[] data, String publicKey)
             throws Exception {
@@ -185,7 +185,7 @@ public class WxrRSA {
      * @param data 源数据
      * @param privateKey 私钥(WxrBase64编码)
      * @return String 加密后的字符串
-     * @throws Exception
+     * @throws Exception 异常
      */
     public static byte[] encryptByPrivateKey(byte[] data, String privateKey)
             throws Exception {
@@ -205,7 +205,7 @@ public class WxrRSA {
      *
      * @param keyMap 密钥对
      * @return String 加密后的字符串
-     * @throws Exception
+     * @throws Exception 异常
      */
     public static String getPrivateKey(Map<String, Object> keyMap)
             throws Exception {
@@ -220,7 +220,7 @@ public class WxrRSA {
      *
      * @param keyMap 密钥对
      * @return String 加密后的字符串
-     * @throws Exception
+     * @throws Exception 异常
      */
     public static String getPublicKey(Map<String, Object> keyMap)
             throws Exception {

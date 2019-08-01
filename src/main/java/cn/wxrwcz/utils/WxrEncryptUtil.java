@@ -1,7 +1,6 @@
 package cn.wxrwcz.utils;
 
 
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
@@ -50,7 +49,7 @@ public class WxrEncryptUtil {
         try {
             MessageDigest md = MessageDigest.getInstance(algorithm);
             byte[] resBytes = charset==null?res.getBytes():res.getBytes(charset);
-            return base64(md.digest(resBytes));
+            return WxrBase64(md.digest(resBytes));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -77,7 +76,7 @@ public class WxrEncryptUtil {
             Mac mac = Mac.getInstance(algorithm);
             mac.init(sk);
             byte[] result = mac.doFinal(res.getBytes());
-            return base64(result);
+            return WxrBase64(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -122,8 +121,8 @@ public class WxrEncryptUtil {
         return null;
     }
 
-    private static String base64(byte[] res){
-        return Base64.encode(res);
+    private static String WxrBase64(byte[] res){
+        return WxrBase64.encode(res);
     }
 
     public  static String parseByte2HexStr(byte buf[]) {
@@ -266,20 +265,20 @@ public class WxrEncryptUtil {
     }
 
     /**
-     * 使用Base64进行加密
+     * 使用WxrBase64进行加密
      * @param res 密文
      * @return String 加密后的字符串
      */
-    public static String Base64Encode(String res) {
-        return Base64.encode(res.getBytes());
+    public static String WxrBase64Encode(String res) {
+        return WxrBase64.encode(res.getBytes());
     }
 
     /**
-     * 使用Base64进行解密
+     * 使用WxrBase64进行解密
      * @param res
      * @return String 加密后的字符串
      */
-    public static String Base64Decode(String res) {
-        return new String(Base64.decode(res));
+    public static String WxrBase64Decode(String res) {
+        return new String(WxrBase64.decode(res));
     }
 }
