@@ -6,7 +6,15 @@
 
     <groupId>cn.wxrwcz</groupId>
     <artifactId>wxrwcz</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.101</version>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <packaging>jar</packaging>
     <name>wxrutils</name>
     <url>https://github.com/wxRwcz/wxrutils</url>

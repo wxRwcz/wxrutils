@@ -1,26 +1,12 @@
 package cn.wxrwcz.utils;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-/**
- * @Description: java类作用描述
- * @Author: wangcz
- * @CreateDate: 2019/8/1$ 11:43$
- * @Version: 1.0
- */
+
 public class WxrUserInfoUtils {
-     /**
-      * @Author wangcz
-      * @Description // is Idcard?
-      * @Name
-      * @Date 11:43 2019/8/1
-      * @Param
-      * @return
-      **/
+
     public static boolean isIDNumber(String IDNumber) {
         if (IDNumber != null && !"".equals(IDNumber)) {
             String regularExpression = "(^[1-9]\\d{5}(18|19|20)\\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\\d{3}[0-9Xx]$)|(^[1-9]\\d{5}\\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\\d{3}$)";
@@ -112,12 +98,7 @@ public class WxrUserInfoUtils {
             return sb.toString();
         }
     }
-    /**
-     * method: 根据身份证获取年龄
-     *
-     * @Param: idcard
-     * @Return: age
-     */
+
     public static Integer getAge(String idcard) {
         if (idcard == null) {
             return null;
@@ -139,14 +120,7 @@ public class WxrUserInfoUtils {
         }
         return WxrDateUtils.dateToStr(getBirthdayDate(idcard),"yyyy-MM-dd");
     }
-    /**
-     * method: 根据身份证获取性别
-     *
-     * @Param: idcard
-     * @Return: sex
-     */
     public static Boolean isBoy(String idcard) {
-        // 获取性别
         String id17 = idcard.substring(16, 17);
         return Integer.parseInt(id17) % 2 != 0;
     }

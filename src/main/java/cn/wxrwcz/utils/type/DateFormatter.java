@@ -1,6 +1,7 @@
 package cn.wxrwcz.utils.type;
 
 public enum DateFormatter {
+
     TIME_FORMAT_YMD_G_HMS("yyyy-MM-dd HH:mm:ss"),
     TIME_FORMAT_YMD_G("yyyy-MM-dd"),
     TIME_FORMAT_YMD_H("yyyy/MM/dd"),

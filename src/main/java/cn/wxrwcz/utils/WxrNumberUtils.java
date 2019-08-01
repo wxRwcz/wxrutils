@@ -30,12 +30,6 @@ public class WxrNumberUtils {
         return integer + number;
     }
 
-    /**
-     * [是否空、或者为0]
-     *
-     * @param num
-     * @return
-     */
     public static boolean isEmptyOrZero(Number num) {
         if (null == num || 0 == num.intValue()) {
             return true;
@@ -47,23 +41,12 @@ public class WxrNumberUtils {
     public static boolean isNotEmptyOrZero(Number num) {
         return !isEmptyOrZero(num);
     }
-    /**
-     * [对double类型的数字保留2位小数]
-     *
-     * @param a
-     * @return
-     */
+
     public static double get2Double(double a) {
         DecimalFormat df = new DecimalFormat("0.00");
         return new Double(df.format(a).toString());
     }
 
-    /**
-     * [对double类型的数字保留2位小数]
-     *
-     * @param a
-     * @return
-     */
     public static String doubleTo2String(double a) {
         DecimalFormat df = new DecimalFormat("0.00");
         return df.format(a).toString();
