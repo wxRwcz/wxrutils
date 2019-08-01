@@ -8,7 +8,7 @@ import java.util.Date;
 public class MyNumberUtilsTest {
     @org.junit.Test
     public void isEmptyOrZero() {
-        System.out.println(WxrNumberUtils.isEmptyOrZero(1));
+        System.out.println(WxrEmptyUtils.isNotEmptyOrZeroNumber(1));
     }
     @Test
     public void doulbeToPercent(){

@@ -50,7 +50,7 @@ public class WxrUserInfoUtils {
     }
 
     public static String phoneMosaic(String phone, Integer front, Integer back) {
-        if (WxrStringUtils.isEmpty(phone)) {
+        if (WxrEmptyUtils.isEmptyString(phone)) {
             return null;
         } else {
             if (front == null || front < 0) {
@@ -79,7 +79,7 @@ public class WxrUserInfoUtils {
     }
 
     public static String nameMosaic(String name) {
-        if (WxrStringUtils.isEmpty(name)) {
+        if (WxrEmptyUtils.isEmptyString(name)) {
             return null;
         } else {
             int len = name.length();

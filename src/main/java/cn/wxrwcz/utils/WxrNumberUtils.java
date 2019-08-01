@@ -30,18 +30,6 @@ public class WxrNumberUtils {
         return integer + number;
     }
 
-    public static boolean isEmptyOrZero(Number num) {
-        if (null == num || 0 == num.intValue()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public static boolean isNotEmptyOrZero(Number num) {
-        return !isEmptyOrZero(num);
-    }
-
     public static double get2Double(double a) {
         DecimalFormat df = new DecimalFormat("0.00");
         return new Double(df.format(a).toString());

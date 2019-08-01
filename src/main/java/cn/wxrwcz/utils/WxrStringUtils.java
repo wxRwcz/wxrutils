@@ -7,12 +7,8 @@ import java.util.regex.Pattern;
 public class WxrStringUtils {
     private static final String[] hexDigits = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
 
-    public static Boolean isEmpty(String text) {
-        return text == null ? true : text.trim().equals("");
-    }
-
     public static boolean isInteger(String str) {
-        if (isEmpty(str)) {
+        if (WxrEmptyUtils.isEmptyString(str)) {
             return false;
         } else {
             Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");
@@ -29,7 +25,7 @@ public class WxrStringUtils {
     }
 
     public static boolean isDouble(String str) {
-        if (isEmpty(str)) {
+        if (WxrEmptyUtils.isEmptyString(str)) {
             return false;
         } else {
             Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*\\.?[\\d]+$");
