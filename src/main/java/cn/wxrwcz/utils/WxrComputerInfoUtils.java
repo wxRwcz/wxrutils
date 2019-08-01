@@ -4,13 +4,9 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Properties;
 
-public class MyComputerInfoUtils {
+public class WxrComputerInfoUtils {
     private static Properties props = System.getProperties();
     private static InetAddress addr;
-
-    public MyComputerInfoUtils() {
-    }
-
     public static String getSystemName() {
         return props.getProperty("os.name");
     }

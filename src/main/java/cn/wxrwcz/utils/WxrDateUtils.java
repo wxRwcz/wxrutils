@@ -2,12 +2,14 @@ package cn.wxrwcz.utils;
 
 
 import cn.wxrwcz.utils.type.DateFormatter;
+
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class MyDateUtils {
+public class WxrDateUtils {
     public static Date getYesterdayTime() {
         Calendar cal = Calendar.getInstance();
         cal.add(5, -1);
@@ -213,12 +215,14 @@ public class MyDateUtils {
         long now = (new Date()).getTime();
         return new Date(dl1 + dl2 - now);
     }
-
     public static Date strToDate(String str) {
         String format = null;
         if (str.contains("-") && str.contains(":")) {
             format = DateFormatter.TIME_FORMAT_YMD_G_HMS.getFormatter();
-        } else if (str.contains("/") && str.length() == 10) {
+        }else if(str.contains("-") &&str.length() == 10){
+            format = DateFormatter.TIME_FORMAT_YMD_G.getFormatter();
+        }
+        else if (str.contains("/") && str.length() == 10) {
             format = DateFormatter.TIME_FORMAT_YMD_G.getFormatter();
         } else if (str.contains("/") && str.contains(":")) {
             format = DateFormatter.TIME_FORMAT_YMD_H_HMS.getFormatter();
@@ -238,7 +242,6 @@ public class MyDateUtils {
             throw new RuntimeException("被转化的日期不正确");
         } else {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
-
             try {
                 return simpleDateFormat.parse(str);
             } catch (ParseException var4) {
@@ -256,7 +259,18 @@ public class MyDateUtils {
     public static String dateToStr(Date date) {
         return dateToStr(date, DateFormatter.TIME_FORMAT_YMD_G_HMS);
     }
-
+    public static Date strToDate(String str,String formatStr) {
+        DateFormat dateFormat = new SimpleDateFormat(formatStr);
+        try {
+            return dateFormat.parse(str);
+        } catch (ParseException e) {
+            throw new RuntimeException("被转化的日期不正确");
+        }
+    }
+    public static String dateToStr(Date date,String formatStr) {
+        DateFormat dateFormat = new SimpleDateFormat(formatStr);
+        return dateFormat.format(date);
+    }
     public static Boolean dateCompareGreater(Date date1, Date date2) {
         return date1.getTime() > date2.getTime();
     }
