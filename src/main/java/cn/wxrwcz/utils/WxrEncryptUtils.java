@@ -275,7 +275,7 @@ public class WxrEncryptUtils {
 
     /**
      * 使用WxrBase64进行解密
-     * @param res
+     * @param res 密文
      * @return String 加密后的字符串
      */
     public static String WxrBase64Decode(String res) {

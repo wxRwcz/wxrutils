@@ -3,27 +3,11 @@ package cn.wxrwcz.utils;
 import java.util.Random;
 import java.util.UUID;
 
-/** 
- * RandomCode:生成随机Code
- * @Project Name:dhfmmd
- * @File Name:RandomCode.java 
- * @Package Name:com.dhfmmd.utils
- * @Creator:REN GUO QING
- * @Date:2016年5月12日下午2:12:00 
- */
-public class RandomCaptchaUtils {
+public class WxrRandomCaptchaUtils {
 	private static char[] codeSequence={'A','a','B','b','c','D','d','E','e','F','f','G','g','H','h',
 		   'i','J','j','k','L','M','m','N','n','p','Q','q','R','r','s','T','t', 'v', 'W',
 		   'u','x','Y','y','z','0','1', '2', '3', '4', '5', '6', '7', '8', '9'};
-	
-	/**
-	 * GetRandomCode:(获取随机Code).
-	 * @param num 获取几位Code
-	 * @return 
-	 * @return :String 
-	 * @Creator:REN GUO QING
-	 * @Date:2016年5月12日 下午2:30:44
-	 */
+
 	public static String randomCode(Integer num){
 		//生成随机类   
 	    Random random = new Random(); 
@@ -35,14 +19,7 @@ public class RandomCaptchaUtils {
 	    }
 		return code;
 	}
-	/**
-	 * GetRandomCode:(获取随机Code).
-	 * @param num 获取几位Code
-	 * @return
-	 * @return :String
-	 * @Creator:REN GUO QING
-	 * @Date:2016年5月12日 下午2:30:44
-	 */
+
 	public static String randomNum(Integer num){
 		//生成随机类
 		Random random = new Random();
