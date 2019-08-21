@@ -2,6 +2,7 @@ package cn.wxrwcz.utils;
 
 
 import com.alibaba.fastjson.JSONObject;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Method;
@@ -43,54 +44,25 @@ public class WxrCollectionUtils {
         }
         return map;
     }
-    public static <T> JSONObject listToJSONByField(List<T> list, String keyField) {
-        String keyMethod = GET+WxrStringUtils.captureName(keyField);
-        return listToJSON(list,keyMethod);
-    }
-    /**
-     * 将 List 集合转化为 Map, 可将 List 对象的任意字段当做 Map 的 key,字段重复的对象，会放到一个list在保存到JSON中
-     * @param list          对象集合
-     * @param methodName    获取字段值的方法，比如 "getId"
-     * @param <T>           对象类型，比如 User
-     * @return  JSONObject  转换后的对象
-     */
-    public static <V,T> JSONObject listToJSON(List<T> list, String methodName){
+    public static <T> JSONObject listToJSON(List<T> list, String keyField) {
         JSONObject json = new JSONObject();
         if (list.size() == 0){
             return json;
         }
         list.forEach(obj->{
-            try{
-                Method method = obj.getClass().getMethod(methodName);
-                String key = String.valueOf(method.invoke(obj));
-                modifyJson(json,obj,key,null);
-            }catch (Exception exception){
-                log.error("Error converting List collection to Map");
-            }
+            modifyJson(json,obj,String.valueOf(WxrBeanUtils.getProperty(obj,keyField)),null);
         });
         return json;
     }
-    public static <T> JSONObject listToJSONByField(List<T> list, String keyField,String valueField) {
-        String keyMethod = GET+WxrStringUtils.captureName(keyField);
-        String valueMethod = GET+WxrStringUtils.captureName(valueField);
-        return listToJSON(list,keyMethod,valueMethod);
-    }
-    private static final String GET = "get";
-    public static <T> JSONObject listToJSON(List<T> list, String keyMethod,String valueMethod){
+    public static <T> JSONObject listToJSON(List<T> list, String keyField,String valueField) {
         JSONObject json = new JSONObject();
         if (list.size() == 0){
             return json;
         }
         list.forEach(obj->{
-            try{
-                Method keymethod = obj.getClass().getMethod(keyMethod);
-                Method valMethod = obj.getClass().getMethod(valueMethod);
-                String key = String.valueOf(keymethod.invoke(obj));
-                String val = String.valueOf(valMethod.invoke(obj));
-                modifyJson(json,obj,key,val);
-            }catch (Exception exception){
-                log.error("Error converting List collection to Map");
-            }
+            String key = String.valueOf(WxrBeanUtils.getProperty(obj,keyField));
+            String val = String.valueOf(WxrBeanUtils.getProperty(obj,valueField));
+            modifyJson(json,obj,key,val);
         });
         return json;
     }

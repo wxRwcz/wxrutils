@@ -150,21 +150,6 @@ public class WxrStringUtils {
         return map;
     }
 
-    public static String getRandom(int length) {
-        return getRandom(length, null);
-    }
-
-    public static String getRandom(Integer length, Boolean isUpperCase) {
-        String uuid = UUID.randomUUID().toString();
-        if (length != null && length > 0) {
-            uuid = uuid.substring(0, length);
-        }
-        if (isUpperCase != null && !isUpperCase) {
-            uuid = uuid.toLowerCase();
-        }
-        return uuid;
-    }
-
     public static Integer strExtractNumber(String str) {
         String regex = "\\D";
         return Integer.valueOf(str.replaceAll(regex, ""));

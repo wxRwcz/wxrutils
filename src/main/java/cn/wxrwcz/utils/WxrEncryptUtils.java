@@ -10,7 +10,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
 
-public class WxrEncryptUtil {
+public class WxrEncryptUtils {
     public static final String MD5 = "MD5";
     public static final String SHA1 = "SHA1";
     public static final String HmacMD5 = "HmacMD5";
@@ -24,15 +24,15 @@ public class WxrEncryptUtil {
     /**AES*/
     public static int keysizeAES = 128;
 
-    public static WxrEncryptUtil me;
+    public static WxrEncryptUtils me;
 
-    private WxrEncryptUtil(){
+    private WxrEncryptUtils(){
     }
-    public static WxrEncryptUtil getInstance(){
+    public static WxrEncryptUtils getInstance(){
         if (me==null) {
-            synchronized (WxrEncryptUtil.class) {
+            synchronized (WxrEncryptUtils.class) {
                 if(me == null){
-                    me = new WxrEncryptUtil();
+                    me = new WxrEncryptUtils();
                 }
             }
         }

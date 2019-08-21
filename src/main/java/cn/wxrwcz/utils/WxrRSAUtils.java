@@ -15,7 +15,7 @@ import java.util.Map;
  * Author:chengkang ren
  * Date:2017/9/21 15:51
  */
-public class WxrRSA {
+public class WxrRSAUtils {
     /** *//**
      * 加密算法RSA
      */
@@ -255,7 +255,7 @@ public class WxrRSA {
 //        String str = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnrpAtZk+yaUvQDr8PkZUOXkxVpRZyenvqKcz7ctBp+Rb/2iSpTO0xBieTawdecA4puL/5Qlq05ov+/UUkHSxvOuby2pqDPbxFQj+m/dI/vUC5vNOT/BLUHDw2qJX8E78I1hlgX63C2vn9lzck3RPx858PtTDbPIGZVV56cdfh7wIDAQAB";
         String str = "ptBOva6m2mkZStQTMOvfwP+2StUhZ4OloJBj8VeerQj/uv/zgI3OGxQQrbUkRBoEVQToZVT08LxD2Oc3Xi0BW+RrNaMxpT0flx6r+F26oWf7SSu3nDW45yFClstegsNxhQXpCPOxGEEQfZA2Sh4DndEhovd3ao3I1PyqFGtZ738=";
         String encryptStr = "{\"mobile\":\"18334771324\",\"money\":\"2.00\"}";
-        str = new String(WxrRSA.decryptByPublicKey(WxrBase64.decode(str), publicKey));
+        str = new String(WxrRSAUtils.decryptByPublicKey(WxrBase64.decode(str), publicKey));
         System.out.println(str);
 //        str = new String(RSAUtils.decryptByPrivateKey(WxrBase64.decode(str),privateKey));
 //        str = new String(RSAUtils.decryptByPrivateKey(WxrBase64.decode(str),privateKey));

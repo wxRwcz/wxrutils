@@ -8,8 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class WxrPropsUtil {
-    private static final Logger LOGGER = LoggerFactory.getLogger(WxrPropsUtil.class);
+public class WxrPropsUtils {
+    private static final Logger LOGGER = LoggerFactory.getLogger(WxrPropsUtils.class);
 
 
     public static Properties loadProps(String fileName){
@@ -61,7 +61,7 @@ public class WxrPropsUtil {
     public static int getInt(Properties props,String key,int defaultValue){
         int value = defaultValue;
         if (props.containsKey(key)){
-            value = WxrCastUtil.castInt(props.getProperty(key));
+            value = WxrCastUtils.castInt(props.getProperty(key));
         }
         return value;
     }
@@ -75,7 +75,7 @@ public class WxrPropsUtil {
     public static boolean getBoolean(Properties props,String key,Boolean defaultValue){
         boolean value = defaultValue;
         if (props.containsKey(key)){
-            value = WxrCastUtil.castBoolean(props.getProperty(key));
+            value = WxrCastUtils.castBoolean(props.getProperty(key));
         }
         return value;
     }

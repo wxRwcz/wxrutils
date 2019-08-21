@@ -1,4 +1,4 @@
-package cn.wxrwcz.utils;
+package cn.wxrwcz.beans;
 
 public class WxrResult<T> {
 

@@ -1,6 +1,6 @@
 package cn.wxrwcz.utils;
 
-public class WxrBitOperationUtil
+public class WxrBitOperationUtils
 {
     public static boolean hasState(long states,long value)
     {

@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
 
-public class WxrExcelUtil {
+public class WxrExcelUtils {
     public static Workbook createWorkBook(List<Map<String, Object>> list, String[] keys, String[] columnNames, String path) {
         // 创建excel工作簿
         File excel = new File(path);
