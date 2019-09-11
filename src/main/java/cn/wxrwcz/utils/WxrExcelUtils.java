@@ -2,20 +2,19 @@ package cn.wxrwcz.utils;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.IndexedColors;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.awt.*;
+import java.awt.Color;
 import java.io.*;
 import java.lang.reflect.Method;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
+
+import static org.apache.poi.ss.usermodel.BorderStyle.THIN;
 
 public class WxrExcelUtils {
     public static Workbook createWorkBook(List<Map<String, Object>> list, String[] keys, String[] columnNames, String path) {
@@ -141,17 +140,17 @@ public class WxrExcelUtils {
         XSSFCellStyle style = (XSSFCellStyle) workbook.createCellStyle();
         // 设置这些样式
         style.setFillForegroundColor(new XSSFColor(foregroundColor));
-        style.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);
-        style.setBorderBottom(XSSFCellStyle.BORDER_THIN);
-        style.setBorderLeft(XSSFCellStyle.BORDER_THIN);
-        style.setBorderRight(XSSFCellStyle.BORDER_THIN);
-        style.setBorderTop(XSSFCellStyle.BORDER_THIN);
-        style.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+        style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        style.setBorderBottom(THIN);
+        style.setBorderLeft(THIN);
+        style.setBorderRight(THIN);
+        style.setBorderTop(THIN);
+        style.setAlignment(HorizontalAlignment.CENTER);
         // 生成一个字体
         XSSFFont font = (XSSFFont) workbook.createFont();
         font.setColor(fontColor);
         font.setFontHeightInPoints((short) 12);
-        font.setBoldweight(XSSFFont.BOLDWEIGHT_BOLD);
+        font.setBold(true);
         // 把字体应用到当前的样式
         style.setFont(font);
 
@@ -160,14 +159,14 @@ public class WxrExcelUtils {
 
     public static XSSFCellStyle getContentStyle(Workbook workbook){
         XSSFCellStyle style = (XSSFCellStyle) workbook.createCellStyle();
-        style.setBorderBottom(XSSFCellStyle.BORDER_THIN);
-        style.setBorderLeft(XSSFCellStyle.BORDER_THIN);
-        style.setBorderRight(XSSFCellStyle.BORDER_THIN);
-        style.setBorderTop(XSSFCellStyle.BORDER_THIN);
-        style.setAlignment(XSSFCellStyle.ALIGN_CENTER);
-        style.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+        style.setBorderBottom(THIN);
+        style.setBorderLeft(THIN);
+        style.setBorderRight(THIN);
+        style.setBorderTop(THIN);
+        style.setAlignment(HorizontalAlignment.CENTER);
+        style.setVerticalAlignment(VerticalAlignment.CENTER);
         XSSFFont font = (XSSFFont) workbook.createFont();
-        font.setBoldweight(XSSFFont.BOLDWEIGHT_NORMAL);
+        font.setBold(false);
         style.setFont(font);
         return style;
     }
