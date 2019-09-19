@@ -11,6 +11,8 @@ import java.util.Properties;
 public class WxrPropsUtils {
     private static final Logger LOGGER = LoggerFactory.getLogger(WxrPropsUtils.class);
 
+    private WxrPropsUtils() {
+    }
 
     public static Properties loadProps(String fileName){
         Properties props = null;

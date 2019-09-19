@@ -5,6 +5,8 @@ package cn.wxrwcz.utils;
  * Created by Yesterday on 2016/4/11.
  */
 public final class WxrBase64 {
+    private WxrBase64() {
+    }
 
     static private final int     BASELENGTH           = 128;
     static private final int     LOOKUPLENGTH         = 64;

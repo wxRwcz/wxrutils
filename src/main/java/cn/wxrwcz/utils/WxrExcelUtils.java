@@ -17,6 +17,9 @@ import java.util.List;
 import static org.apache.poi.ss.usermodel.BorderStyle.THIN;
 
 public class WxrExcelUtils {
+    private WxrExcelUtils() {
+    }
+
     public static Workbook createWorkBook(List<Map<String, Object>> list, String[] keys, String[] columnNames, String path) {
         // 创建excel工作簿
         File excel = new File(path);

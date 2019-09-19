@@ -10,6 +10,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class WxrDateUtils {
+    private WxrDateUtils() {
+    }
+
     public static Date getYesterdayTime() {
         Calendar cal = Calendar.getInstance();
         cal.add(5, -1);

@@ -5,6 +5,9 @@ import java.net.UnknownHostException;
 import java.util.Properties;
 
 public class WxrComputerInfoUtils {
+    private WxrComputerInfoUtils() {
+    }
+
     private static Properties props = System.getProperties();
     private static InetAddress addr;
     public static String getSystemName() {

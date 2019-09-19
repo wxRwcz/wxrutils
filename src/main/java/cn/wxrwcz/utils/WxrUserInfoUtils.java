@@ -6,6 +6,8 @@ import java.util.GregorianCalendar;
 
 
 public class WxrUserInfoUtils {
+    private WxrUserInfoUtils() {
+    }
 
     public static boolean isIDNumber(String IDNumber) {
         if (IDNumber != null && !"".equals(IDNumber)) {

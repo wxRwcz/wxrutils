@@ -9,6 +9,8 @@ import java.lang.reflect.Method;
 import java.util.*;
 @Slf4j
 public class WxrCollectionUtils {
+    private WxrCollectionUtils() {
+    }
 
     public static List strArrayDistinct(String[] strArray) {
         List<String> list = Arrays.asList(strArray);

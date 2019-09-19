@@ -25,8 +25,10 @@ import java.net.URLConnection;
 import java.util.*;
 
 public class WxrHttpUtils {
+    private WxrHttpUtils() {
+    }
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(WxrHttpUtils.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(WxrHttpUtils.class);
 
 	private static final String CHARSET = "UTF-8";
 

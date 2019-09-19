@@ -4,6 +4,8 @@ import java.util.Collection;
 import java.util.Map;
 
 public class WxrEmptyUtils {
+    private WxrEmptyUtils() {
+    }
 
     public static boolean isEmptyCollection(Collection<?> collection){
         return collection == null || collection.isEmpty();

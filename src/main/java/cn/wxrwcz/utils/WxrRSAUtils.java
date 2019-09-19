@@ -16,6 +16,8 @@ import java.util.Map;
  * Date:2017/9/21 15:51
  */
 public class WxrRSAUtils {
+    private WxrRSAUtils() {
+    }
     /** *//**
      * 加密算法RSA
      */

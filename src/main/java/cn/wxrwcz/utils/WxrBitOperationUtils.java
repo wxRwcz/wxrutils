@@ -2,7 +2,10 @@ package cn.wxrwcz.utils;
 
 public class WxrBitOperationUtils
 {
-    public static boolean hasState(long states,long value)
+    private WxrBitOperationUtils() {
+    }
+
+    public static boolean hasState(long states, long value)
     {
         return (states & value) !=  0;
     }

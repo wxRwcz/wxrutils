@@ -4,7 +4,10 @@ import java.util.Random;
 import java.util.UUID;
 
 public class WxrRandomCaptchaUtils {
-	private static char[] codeSequence={'A','a','B','b','c','D','d','E','e','F','f','G','g','H','h',
+    private WxrRandomCaptchaUtils() {
+    }
+
+    private static char[] codeSequence={'A','a','B','b','c','D','d','E','e','F','f','G','g','H','h',
 		   'i','J','j','k','L','M','m','N','n','p','Q','q','R','r','s','T','t', 'v', 'W',
 		   'u','x','Y','y','z','0','1', '2', '3', '4', '5', '6', '7', '8', '9'};
 

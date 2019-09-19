@@ -11,6 +11,7 @@ import java.security.MessageDigest;
 import java.security.SecureRandom;
 
 public class WxrEncryptUtils {
+
     public static final String MD5 = "MD5";
     public static final String SHA1 = "SHA1";
     public static final String HmacMD5 = "HmacMD5";

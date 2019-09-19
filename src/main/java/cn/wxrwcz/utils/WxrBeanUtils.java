@@ -17,6 +17,9 @@ import java.util.Set;
 
 @Slf4j
 public class WxrBeanUtils  extends org.springframework.beans.BeanUtils {
+    private WxrBeanUtils() {
+    }
+
     /**
      *
      * @param object   旧的对象带值

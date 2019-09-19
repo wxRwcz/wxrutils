@@ -2,6 +2,8 @@ package cn.wxrwcz.utils;
 
 
 public class WxrCastUtils {
+    private WxrCastUtils() {
+    }
 
     public static String castString(Object obj){
         return castString(obj,"");

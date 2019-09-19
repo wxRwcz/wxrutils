@@ -39,7 +39,7 @@ public class WxrResult<T> {
     }
 
 
-    public WxrResult() {
+    private WxrResult() {
 
     }
 
