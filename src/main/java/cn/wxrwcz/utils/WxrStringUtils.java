@@ -11,7 +11,7 @@ public class WxrStringUtils {
     private static final String[] hexDigits = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
 
     public static boolean isInteger(String str) {
-        if (WxrEmptyUtils.isEmptyString(str)) {
+        if (WxrEmptyUtils.isEmptyCharSequence(str)) {
             return false;
         } else {
             Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");
@@ -28,7 +28,7 @@ public class WxrStringUtils {
     }
 
     public static boolean isDouble(String str) {
-        if (WxrEmptyUtils.isEmptyString(str)) {
+        if (WxrEmptyUtils.isEmptyCharSequence(str)) {
             return false;
         } else {
             Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*\\.?[\\d]+$");

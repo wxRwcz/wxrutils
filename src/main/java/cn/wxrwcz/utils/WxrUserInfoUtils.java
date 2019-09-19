@@ -52,7 +52,7 @@ public class WxrUserInfoUtils {
     }
 
     public static String phoneMosaic(String phone, Integer front, Integer back) {
-        if (WxrEmptyUtils.isEmptyString(phone)) {
+        if (WxrEmptyUtils.isEmptyCharSequence(phone)) {
             return null;
         } else {
             if (front == null || front < 0) {
@@ -81,7 +81,7 @@ public class WxrUserInfoUtils {
     }
 
     public static String nameMosaic(String name) {
-        if (WxrEmptyUtils.isEmptyString(name)) {
+        if (WxrEmptyUtils.isEmptyCharSequence(name)) {
             return null;
         } else {
             int len = name.length();

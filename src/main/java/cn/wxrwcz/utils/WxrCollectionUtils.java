@@ -70,7 +70,7 @@ public class WxrCollectionUtils {
     }
 
     private static void modifyJson(JSONObject json,Object obj,String key,String val){
-        boolean flag = WxrEmptyUtils.isEmptyString(val);
+        boolean flag = WxrEmptyUtils.isEmptyCharSequence(val);
         if (json.get(key) == null){
             json.put(key, flag?obj:val);
         }else {

@@ -23,7 +23,7 @@ public class WxrCastUtils {
         double value = defaultValue;
         if (obj!=null){
             String strValue = castString(obj);
-            if (WxrEmptyUtils.isNotEmptyString(strValue)){
+            if (WxrEmptyUtils.isEmptyCharSequence(strValue)){
                 try{
                     value = Double.parseDouble(strValue);
                 }catch (NumberFormatException e){
@@ -45,7 +45,7 @@ public class WxrCastUtils {
         long value = defaultValue;
         if (obj!=null){
             String strValue = castString(obj);
-            if (WxrEmptyUtils.isNotEmptyString(strValue)){
+            if (WxrEmptyUtils.isEmptyCharSequence(strValue)){
                 try{
                     value = Long.parseLong(strValue);
                 }catch (NumberFormatException e){
@@ -67,7 +67,7 @@ public class WxrCastUtils {
         int value = defaultValue;
         if (obj!=null){
             String strValue = castString(obj);
-            if (WxrEmptyUtils.isNotEmptyString(strValue)){
+            if (WxrEmptyUtils.isEmptyCharSequence(strValue)){
                 try{
                     value = Integer.parseInt(strValue);
                 }catch (NumberFormatException e){

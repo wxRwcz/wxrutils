@@ -1,10 +1,44 @@
 package cn.wxrwcz.utils;
 
+import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.Map;
 
 public class WxrEmptyUtils {
     private WxrEmptyUtils() {
+    }
+    /**
+     * 判断对象为空
+     * @param obj 对象名
+     * @return 是否为空
+     */
+    @SuppressWarnings("rawtypes")
+    public static boolean isEmpty(Object obj) {
+        if (obj == null) {
+            return true;
+        }
+        if ((obj instanceof Collection)) {
+            return isEmptyCollection((Collection<?>) obj);
+        }
+        if ((obj instanceof CharSequence)) {
+            return isEmptyCharSequence((CharSequence) obj);
+        }
+        if(obj instanceof Map){
+            return isEmptyMap((Map<?, ?>) obj);
+        }
+        if(obj instanceof Array){
+            return isEmptyArrays((Object[]) obj);
+        }
+        return false;
+    }
+
+    /**
+     * 判断对象不为空
+     * @param obj 对象名
+     * @return 是否不为空
+     */
+    public static boolean isNotEmpty(Object obj) {
+        return !isEmpty(obj);
     }
 
     public static boolean isEmptyCollection(Collection<?> collection){
@@ -43,10 +77,10 @@ public class WxrEmptyUtils {
     }
 
 
-    public static Boolean isEmptyString(String text) {
-        return null == text || text.trim().length() == 0;
+    public static Boolean isEmptyCharSequence(CharSequence text) {
+        return null == text || text.length() == 0;
     }
-    public static Boolean isNotEmptyString(String text) {
-        return !isEmptyString(text);
+    public static Boolean isNotEmptyCharSequence(CharSequence text) {
+        return !isEmptyCharSequence(text);
     }
 }
